@@ -14,7 +14,7 @@ Double_D = """
 
 print(Double_D)
 
-class Game:
+class Ham_Game:
     def __init__(self):
         self.morality = 50
         self.sanity = 50
@@ -22,12 +22,12 @@ class Game:
         self.current_act = 1
 
     def start_game(self):
-        print("Welcome to Hamlet's Dilemma. Your choices will shape the story of Prince Hamlet.")
+        print("Welcome to Hamlet's Game. Your choices will shape the story of Prince Hamlet.")
         input("Press Enter to begin your adventure...")
         self.act_one()
 
     def act_one(self):
-        print("\nAct 1: The Ghost's Revelation")
+        print("\nAct 1: The Ghost's Encounter")
         print("You encounter the ghost of your father, who reveals he was murdered by Claudius.")
         choice = input("Do you: (a) Vow to take revenge (b) Seek more information (c) Doubt the ghost\n")
 
@@ -61,7 +61,7 @@ class Game:
         self.act_two()
 
     def act_two(self):
-        print("\nAct 2: The Play Within a Play")
+        print("\nAct 2: A Play Within a Play")
         print("You plan to stage a play that mirrors your father's murder to gauge Claudius's reaction.")
         choice = input("Do you: (a) Direct the play yourself (b) Ask Horatio for help (c) Abandon the plan\n")
 
@@ -122,7 +122,7 @@ class Game:
         self.act_four()
 
     def keep_secrets(self):
-        print("\nYou opt for secrecy, pondering your next move in solitude.")
+        print("\nYou opt for secrecy, wondering your next move in solitude.")
         self.sanity -= 10
         self.check_status()
         self.current_act = 4
@@ -144,6 +144,6 @@ class Game:
             print(f"Relationship with {character}: {relation}")
 
 # Start the game
-game = Game()
+game = Ham_Game()
 game.start_game()
 
