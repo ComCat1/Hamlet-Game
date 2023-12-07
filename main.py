@@ -1,6 +1,13 @@
 import sys
 from time import sleep
 
+print(LOADING.)
+time.sleep(.5)
+print(LOADING..)
+time.sleep(.5)
+print(LOADING...)
+time.sleep(5)
+
 Double_D = """ 
 
   ______________________________________________________________________________
