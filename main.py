@@ -1,3 +1,6 @@
+import sys
+from time import sleep
+
 
 Double_D = """   
                                                                  
