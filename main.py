@@ -1,21 +1,23 @@
 import sys
 from time import sleep
 
-
 Double_D = """   
                                                                  
 88                                        88                     
 88                                        88              ,d     
 88                                        88              88     
 88,dPPYba,  ,adPPYYba, 88,dPYba,,adPYba,  88  ,adPPYba, MM88MMM  
-88P'    "8a ""     `Y8 88P'   "88"    "8a 88 a8P_____88   88     
+88P'    "8a ""     `Y8 88P'   "88"    "8a 8 a8P_____88   88     
 88       88 ,adPPPPP88 88      88      88 88 8PP"""""""   88     
 88       88 88,    ,88 88      88      88 88 "8b,   ,aa   88,    
 88       88 `"8bbdP"Y8 88      88      88 88  `"Ybbd8"'   "Y888  
 
 """
 
-print(Double_D)
+for char in Double_D:
+    sleep(0.5)
+    sys.stdout.write(char)
+
 
 class Ham_Game:
     def __init__(self):
