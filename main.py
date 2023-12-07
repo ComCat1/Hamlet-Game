@@ -1,13 +1,6 @@
 import sys
 from time import sleep
 
-print(LOADING.)
-time.sleep(.5)
-print(LOADING..)
-time.sleep(.5)
-print(LOADING...)
-time.sleep(5)
-
 Double_D = """ 
 
   ______________________________________________________________________________
@@ -161,11 +154,44 @@ class Game:
 
     def act_four(self):
         # Act 4 narrative and decisions
-        pass
+        print("\nAct 4: The conquest continues...")
+        print("Polonius is dead. Gertrude has informed everyone of the news. Claudius wishes to send you to England. It is time to define your character.")
+        choice = input("Do you: (a) Leave to England (b) Console Ophelia (c) Write a letter to horatio\n")
+
+        if choice == 'a':
+            self.leave_To_England()
+        elif choice == 'b':
+            self.console_Ophelia()
+        elif choice == 'c':
+            self.write_Letter()
+        else:
+            print("Invalid choice. Try again.")
+            self.act_four()
+    
+    def confront_claudius(self):
+        print("\nYou decide to confront Claudius, risking everything.")
+        self.morality -= 5
+        self.relationships["Claudius"] -= 30
+        self.check_status()
+        self.current_act = 4
+        self.act_four()
+
+    def confide_in_gertrude(self):
+        print("\nYou turn to Gertrude for support. Does she trust you?")
+        self.relationships["Gertrude"] += 15
+        self.check_status()
+        self.current_act = 4
+        self.act_four()
+
+    def keep_secrets(self):
+        print("\nYou opt for secrecy, wondering your next move in solitude.")
+        self.sanity -= 10
+        self.check_status()
+        self.current_act = 4
+        self.act_four()
 
     def act_five(self):
         # Act 5 narrative and decisions, leading to the conclusion of the game
-        pass
 
     def check_status(self):
         print("\nCurrent Status:")
