@@ -3,8 +3,8 @@ from time import sleep
 
 Double_D = """ 
 
- _______________________________________________________________________________
-/                                                                              /|
+  ______________________________________________________________________________
+ /                                                                             /|
 ++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  |                                                            
 |                                                                            |  |
 |    88                                        88                            |  |                                                                            
@@ -38,7 +38,7 @@ for char in Double_D:
     sys.stdout.write(char)
 
 
-class Ham_Game:
+class Game:
     def __init__(self):
         self.morality = 50
         self.sanity = 50
@@ -168,6 +168,6 @@ class Ham_Game:
             print(f"Relationship with {character}: {relation}")
 
 # Start the game
-game = Ham_Game()
+game = Game()
 game.start_game()
 
