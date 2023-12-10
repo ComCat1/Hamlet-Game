@@ -2,20 +2,8 @@ import sys
 from time import sleep
 
 Double_D = """ 
-
-  ______________________________________________________________________________
- /                                                                             /|
-++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++  |                                                            
-|                                                                            |  |
-|    88                                        88                            |  |                                                                            
-|    88                                        88              ,d            |  |                                                             
-|    88                                        88              88            |  |                                                         
-|    88,dPPYba,  ,adPPYYba, 88,dPYba,,adPYba,  88  ,adPPYba, MM88MMM         |  |
-|    88P'    "8a ""     `Y8 88P'   "88"    "8a 8 a8P_____88   88             |  |                                                                                                          
-|    88       88 ,adPPPPP88 88      88      88 88 8PP"""""""   88            |  |                                                                     
-|    88       88 88,    ,88 88      88      88 88 "8b,   ,aa   88,           |  |________                                                                    
-|    88       88 `"8bbdP"Y8 88      88      88 88  `"Ybbd8"'   "Y888         | /_______ /|
-|                                                                                      | |
+hamlet
+                                                                                       | |
 .----------------.  .----------------.  .----------------.  .----------------.         | |
 | .--------------. || .--------------. || .--------------. || .--------------. |       | |
 | |    ______    | || |      __      | || | ____    ____ | || |  _________   | |       | |
@@ -34,7 +22,7 @@ ________________________________________________________________________________
 """
 
 for char in Double_D:
-    sleep(0.1)
+    sleep(0.000001)
     sys.stdout.write(char)
 
 
@@ -191,14 +179,40 @@ class Game:
         self.act_four()
 
     def act_five(self):
-        # Act 5 narrative and decisions, leading to the conclusion of the game
+        print("\nAct 5: The Final Act")
+        print("The endgame approaches. Your actions have shaped the course of events, and now you must face the consequences.")
+        choice = input("Do you: (a) Challenge Claudius to a duel (b) Plan your escape (c) Seek reconciliation\n")
 
-    def check_status(self):
-        print("\nCurrent Status:")
-        print(f"Morality: {self.morality}")
-        print(f"Sanity: {self.sanity}")
-        for character, relation in self.relationships.items():
-            print(f"Relationship with {character}: {relation}")
+        if choice == 'a':
+            self.challenge_claudius()
+        elif choice == 'b':
+            self.plan_escape()
+        elif choice == 'c':
+            self.seek_reconciliation()
+        else:
+            print("Invalid choice. Try again.")
+            self.act_five()
+
+    def challenge_claudius(self):
+        print("\nYou challenge Claudius to a duel, facing your destiny head-on.")
+        # Add logic for duel outcome based on player's current status
+        self.conclude_game()
+
+    def plan_escape(self):
+        print("\nYou decide to flee, seeking a new life away from this tragedy.")
+        # Add logic for escape outcome based on player's current status
+        self.conclude_game()
+
+    def seek_reconciliation(self):
+        print("\nYou attempt to reconcile with those around you, seeking peace.")
+        # Add logic for reconciliation outcome based on player's current status
+        self.conclude_game()
+
+    def conclude_game(self):
+        # Summarize the player's journey and provide an ending based on their decisions
+        print("\nYour journey as Hamlet has come to an end.")
+        # Add logic to summarize the player's path and provide a fitting conclusion
+        print("Thank you for playing!")
 
 # Start the game
 game = Game()
@@ -211,4 +225,3 @@ game.start_game()
 #      _    /   ,    \/\_            (˚ˎ 。7  
 #     ((____|    )_-\ \_-`            |、˜〵          
 #      `-----'`-----` `--`            じしˍ,)ノ
-
