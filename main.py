@@ -2,23 +2,11 @@ import sys
 from time import sleep
 
 Double_D = """ 
-hamlet
-                                                                                       | |
-.----------------.  .----------------.  .----------------.  .----------------.         | |
-| .--------------. || .--------------. || .--------------. || .--------------. |       | |
-| |    ______    | || |      __      | || | ____    ____ | || |  _________   | |       | |
-| |  .' ___  |   | || |     /  \     | || ||_   \  /   _|| || | |_   ___  |  | |       | |
-| | / .'   \_|   | || |    / /\ \    | || |  |   \/   |  | || |   | |_  \_|  | |       | |
-| | | |    ____  | || |   / ____ \   | || |  | |\  /| |  | || |   |  _|  _   | |       | | 
-| | \ `.___]  _| | || | _/ /    \ \_ | || | _| |_\/_| |_ | || |  _| |___/ |  | |       | |
-| |  `._____.'   | || ||____|  |____|| || ||_____||_____|| || | |_________|  | |       | |
-| |              | || |              | || |              | || |              | |       | |
-| '--------------' || '--------------' || '--------------' || '--------------' |       | |
- '----------------'  '----------------'  '----------------'  '----------------'        | |  
-                                                                                       | |
-By: McKeane McBrearty AND Jackson Violich                                              | |
-                                                                                       | |
-________________________________________________________________________________________ /
+hamlet game
+
+                                                                                       
+By: McKeane McBrearty AND Jackson Violich                                              
+                                                                                       
 """
 
 for char in Double_D:
@@ -27,6 +15,16 @@ for char in Double_D:
 
 
 class Game:
+
+
+    def check_status(self):
+        print("\nCurrent Status:")
+        print(f"Morality: {self.morality}")
+        print(f"Sanity: {self.sanity}")
+        for character, relation in self.relationships.items():
+            print(f"Relationship with {character}: {relation}")
+
+
     def __init__(self):
         self.morality = 50
         self.sanity = 50
@@ -156,6 +154,15 @@ class Game:
             print("Invalid choice. Try again.")
             self.act_four()
     
+    def leave_To_England(self):
+            print("\nYou decide to leave for England, seeking safety and perhaps new allies the -- end.")
+            self.relationships["Claudius"] -= 10  
+           
+    def console_Ophelia(self):
+            print("\nYou decide to console Ophelia, showing compassion in a time of grief. you let everything go and decide to quit being a bitch and go live with her away from you crazy family -- the end")
+            self.relationships["Ophelia"] += 20 
+          
+
     def confront_claudius(self):
         print("\nYou decide to confront Claudius, risking everything.")
         self.morality -= 5
